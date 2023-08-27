@@ -8,6 +8,8 @@ const cartRoutes = require("./routes/cart.route")
 const ordersRoutes = require("./routes/order.route")
 const productImageRoutes = require ("./routes/productImages.route.js")
 const eventRoutes = require("./routes/events.route")
+const stripeRoutes = require("./routes/stripe.route")
+const mailRoutes = require ('./routes/mail.route')
 const cors = require('cors');
 const path = require('path');
 
@@ -35,6 +37,8 @@ app.use("/api/carts", cartRoutes);
 app.use("/api/orders", ordersRoutes);
 app.use('/api/productImage', productImageRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/checkout', stripeRoutes);
+app.use('/api/mail', mailRoutes);
 
 
 // Serve panel and view routes
